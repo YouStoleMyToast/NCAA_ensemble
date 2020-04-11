@@ -259,10 +259,11 @@ def main( argv ):
     print("FP: ", cm[1][0])
     print("TP: ", cm[1][1])
 
+    f1_score = sklearn.metrics.f1_score(actual_labels, predicted_labels,average="micro")
     print()
     print("Precision:", sklearn.metrics.precision_score(actual_labels, predicted_labels,average="micro"))
     print("Recall:", sklearn.metrics.recall_score(actual_labels, predicted_labels,average="micro"))
-    print("F1:", sklearn.metrics.f1_score(actual_labels, predicted_labels,average="micro"))
+    print("F1:", f1_score)
 
 
     test_data = process_data.get_data("data/test.csv")
@@ -279,7 +280,7 @@ def main( argv ):
 
     labels.to_csv("data/test_result.csv", index=False)
 
-    cut_data.cut_result_data()
+    cut_data.cut_result_data(f1_score)
         
     return
 

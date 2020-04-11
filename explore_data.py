@@ -132,6 +132,7 @@ def development():
     combo_loss["result"] = losses
 
     combo = pd.concat([combo_win,combo_loss])
+    print(combo.info())
     combo.to_csv("./data/master.csv",index=0)
 
     return

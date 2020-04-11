@@ -4,7 +4,7 @@ import process_data
 import sklearn
 import pandas as pd
 import numpy as np
-import consolidation
+# import consolidation
 import random
 
 
@@ -54,7 +54,7 @@ def get_column_accuracy(myData,column):
 
 def cut_result_data(score):
     score = str(score).split(".")[1]
-    data = process_data.get_data("data/test_result_" + score + ".csv")
+    data = process_data.get_data("data/test_result.csv")
     # greatest = []
     # for index,row in data.iterrows():
     #     if row[0] > row[1]:
@@ -88,7 +88,7 @@ def cut_result_data(score):
 
 
     print(myData)
-    myData.to_csv("data/test_results.csv",index=0)
+    myData.to_csv("data/test_results_"+score+".csv",index=0)
     return
 
 def main():

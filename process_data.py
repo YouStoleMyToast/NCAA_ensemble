@@ -21,7 +21,7 @@ def get_feature_columns():
     return [ "TeamName","WSeed","LSeed"]
 
 def get_numerical_feature_columns():
-    return [ "TeamID","WTO","LTO","WScore","LScore","LAst","WAst","WFGA3","LFGA3","WStl","LStl","WFGA","LFGA"]
+    return [ "TeamID","WTO","LTO","WScore","LScore","LAst","WAst","WFGA3","LFGA3","WStl","LStl","WFGA","LFGA","WOR","LOR","WDR","LDR","WPF","LPF"]
 
 # def get_derived_numerical_feature_columns():
 #     return ["Age^2"]
